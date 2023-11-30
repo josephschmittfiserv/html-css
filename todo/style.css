@@ -1,0 +1,111 @@
+body {
+    background: #B2FEFA;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+}
+
+#title {
+    margin-top: 5px;
+    font-size: 3rem;
+    font-family: 'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    margin: 50px auto 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    overflow: hidden;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+li > input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+li > label {
+    flex-grow: 1;
+    font-size: 1.2rem;
+    line-height: 40px;
+    padding-left: 11px;
+}
+
+input[type="text"] {
+    width: 226px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 6px;
+    font-family: 'Lato', sans-serif;
+    color: #333;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #2079b0;
+}
+
+button {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #2079b0;
+}
+
+h3, label[for='new-task'] {
+    color: #333;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #333;
+    padding: 30px 0 10px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+#completed-tasks label {
+    text-decoration: line-through;
+    color: #888;
+}
+
+ul li input[type="text"] {
+    display: none;
+}
+
+ul li.editMode input[type="text"] {
+    display: block;
+}
+
+ul li.editMode label {
+    display: none;
+}
+
+#clear {
+    font-size: 1rem;
+    float: right;
+    text-align: center;
+}
