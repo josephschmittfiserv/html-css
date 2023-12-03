@@ -87,6 +87,5 @@ document.addEventListener('DOMContentLoaded', function() {
     let themeToggler = document.getElementById('theme_toggler');
     themeToggler.addEventListener('click', function() {
         document.body.classList.toggle('dark_mode');
-        document.h3.classList.toggle('dark_mode');
     });
 });
