@@ -55,7 +55,7 @@ li > label {
 input[type="text"] {
     width: 226px;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid;
     background: #fff;
     border-radius: 6px;
     font-family: 'Lato', sans-serif;
