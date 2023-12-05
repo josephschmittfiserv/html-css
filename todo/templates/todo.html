@@ -10,6 +10,9 @@
 
 <body>
 
+    {% if current_user.is_authenticated %}
+    <h4>{{session.username}} is logged in</h4>
+    {% endif %}
     <button id="theme_toggler">Toggle Dark Mode</button>
 
     <div class="container">
