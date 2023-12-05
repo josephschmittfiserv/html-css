@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for, redirect
+from flask import Flask, render_template, request, session, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, logout_user
 
@@ -67,6 +67,8 @@ def login():
         if user.password == request.form.get("password"):
             # Use the login_user method to log in the user
             login_user(user)
+            # showing which user is logged in
+            session['username']=request.form.get("username")
             return redirect(url_for("todo"))
         # Redirect the user back to the home
         # (we'll create the home route in a moment)
