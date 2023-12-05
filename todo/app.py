@@ -57,6 +57,8 @@ def createAcc():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    # Declare/clear error message msg
+    msg=""
     # If a post request was made, find the user by 
     # filtering for the username
     if request.method == "POST":
@@ -70,9 +72,10 @@ def login():
             # showing which user is logged in
             session['username']=request.form.get("username")
             return redirect(url_for("todo"))
-        # Redirect the user back to the home
-        # (we'll create the home route in a moment)
-    return render_template("login.html")
+        # Error message if username and password doesnt match
+        else:
+            msg = "Please enter correct login details"
+    return render_template("login.html", msg=msg)
 
 
 @app.route('/todo.html')
