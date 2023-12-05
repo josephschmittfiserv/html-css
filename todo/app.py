@@ -38,12 +38,12 @@ def loader_user(user_id):
     return Users.query.get(user_id)
 
 
-@app.route('/', methods=["GET", "POST"])
+@app.route('/createacc', methods=["GET", "POST"])
 def createAcc():
-  # If the user made a POST request, create a new user
+# If the user made a POST request, create a new user
     if request.method == "POST":
         user = Users(username=request.form.get("username"),
-                     password=request.form.get("password"))
+                password=request.form.get("password"))
         # Add the user to the database
         db.session.add(user)
         # Commit the changes made
@@ -76,6 +76,10 @@ def login():
 @app.route('/todo.html')
 def todo():
     return render_template('todo.html')
+
+@app.route('/')
+def home():
+    return render_template('home.html')
 
 
 if __name__ == '__main__':
