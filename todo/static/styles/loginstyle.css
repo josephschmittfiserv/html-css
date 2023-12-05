@@ -25,6 +25,21 @@ body {
     flex-direction: column;
 }
 
+.login-form button {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
 .form-group {
     margin-bottom: 15px;
 }
