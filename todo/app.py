@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, session, url_for, redirect
+import pandas
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, logout_user
 
@@ -78,8 +79,14 @@ def login():
     return render_template("login.html", msg=msg)
 
 
-@app.route('/todo.html')
+@app.route('/todo.html', methods=["GET", "POST"])
 def todo():
+    if request.method=='POST':
+        file = request.files['file']
+        file.save(file.filename)
+        df = pandas.read_excel(file)
+        data=df.to_html()
+        return render_template("todo.html", data=data)
     return render_template('todo.html')
 
 @app.route('/')

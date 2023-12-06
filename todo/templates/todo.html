@@ -9,11 +9,10 @@
 
 
 <body>
-
-    {% if current_user.is_authenticated %}
-    <h4>{{session.username}} is logged in</h4>
-    {% endif %}
-    <button id="theme_toggler">Toggle Dark Mode</button>
+    <form class="login-form" action="{{ url_for('home') }}">
+        <button type="submit">Logout {{session.username}}</button>
+        <button type="button" id="theme_toggler">Toggle Dark Mode</button>
+    </form>
 
     <div class="container">
         <div class="section1">
@@ -48,6 +47,14 @@
             </button>
         </div>
     </div>
+
+    <h4>Upload Excel File (.xlsx)</h4>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".xlsx, .xls">
+        <input type="submit" value="Upload">
+    </form>
+    <div>{{ data | safe }}</div>
+
     <script src="{{url_for('static', filename='script.js')}}"></script>
 </body>
 
